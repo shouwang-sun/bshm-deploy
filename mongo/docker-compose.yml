@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+
+    mongodb:
+        image: mongo:${MONGO_VERSION:-3.4.10}
+        volumes:
+            - data:/data/db
+        networks:
+            - bshm_net
+        restart: always
+
+networks:
+    bshm_net:
+        external: true
+
+volumes:
+    data:

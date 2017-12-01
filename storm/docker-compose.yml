@@ -1,0 +1,61 @@
+version: '3.4'
+services:
+
+    zookeeper:
+        image: zookeeper:${ZOOKEEPER_VERSION:-3.4.11}
+        networks:
+            - bshm_net
+        restart: always
+
+    nimbus:
+        image: storm:${STORM_VERSION:-1.1.1}
+        command: storm nimbus
+        depends_on:
+            - zookeeper
+        networks:
+            - bshm_net
+        ports:
+            - 6627:6627
+        volumes:
+            - ./logs:/logs
+            - ./conf:/conf
+            - data:/data
+        restart: always
+
+    supervisor:
+        image: storm:${STORM_VERSION:-1.1.1}
+        command: storm supervisor
+        depends_on:
+            - nimbus
+            - zookeeper
+        networks:
+            - bshm_net
+        volumes:
+            - ./logs:/logs
+            - ./conf:/conf
+            - data:/data
+        restart: always
+
+    ui:
+        image: storm:${STORM_VERSION:-1.1.1}
+        command: storm ui
+        depends_on:
+            - zookeeper
+            - nimbus
+        networks:
+            - bshm_net
+        ports:
+            - 8080:8080
+        volumes:
+            - ./logs:/logs
+            - ./conf:/conf
+            - data:/data
+        restart: always
+
+volumes:
+    data:
+
+networks:
+    bshm_net:
+        external: true
+    
