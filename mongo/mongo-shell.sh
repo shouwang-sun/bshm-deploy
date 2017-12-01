@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #
-# Usuage: mongo-shell.sh [URI]
+# mongo-shell -- connect to mongodb in docker container
 #
-# Use this script to connect to mongodb in docker container.
-# URI's format refers to https://docs.mongodb.com/manual/reference/connection-string/
+# Usage: mongo-shell.sh [URI]
+#   URI -- see https://docs.mongodb.com/manual/reference/connection-string/
 #
 
 readonly MONGO_VERSION="3.4.10"

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 #
-# Usage: storm-submit.sh JAR MAIN_CLASS [ARG...] [TOPO_NAME]
+# storm-submit -- submit topology to storm docker cluster.
 #
-# Used to submit topology to storm docker cluster.
+# Usage: storm-submit.sh JAR MAIN_CLASS [ARG...] [TOPO_NAME]
 #
 
 readonly STORM_VERSION=1.1.1
