@@ -1,4 +1,3 @@
-
 * start the storm cluster
 ```
 docker-compose up -d

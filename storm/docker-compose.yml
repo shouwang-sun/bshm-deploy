@@ -15,7 +15,7 @@ services:
         networks:
             - bshm_net
         ports:
-            - 6627:6627
+            - "6627:6627"
         volumes:
             - ./logs:/logs
             - ./conf:/conf
@@ -45,7 +45,7 @@ services:
         networks:
             - bshm_net
         ports:
-            - 8080:8080
+            - "8080:8080"
         volumes:
             - ./logs:/logs
             - ./conf:/conf

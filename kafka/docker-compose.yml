@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+
+    landoop:
+        image: landoop/fast-data-dev
+        networks:
+            - host
+        ports:
+            - "9092:9092"
+        volumes:
+            - ./connectors:/connectors
+        environment:
+            CONNECT_HEAP: 3G
+
+networks:
+    host:
+        external: true
