@@ -1,3 +1,5 @@
 storm/logs/*
 ftp/data/*
+confluent/connectors/*
+confluent/data/*
 !README.md
