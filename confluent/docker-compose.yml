@@ -53,8 +53,6 @@ services:
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
     restart: always
 
-
-
   connect:
     image: confluentinc/cp-kafka-connect:${CONFLUENT_VERSION:-3.2.2}
     hostname: connect
