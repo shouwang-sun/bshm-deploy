@@ -1,0 +1,14 @@
+{
+  "name": "FtpSourceConnector",
+  "config": {
+    "connector.class": "com.datamountaineer.streamreactor.connect.ftp.FtpSourceConnector",
+    "tasks.max": "1",
+    "connect.ftp.address": "192.168.1.106:21",
+    "connect.ftp.user": "arthur",
+    "connect.ftp.password": "sun",
+    "connect.ftp.refresh": "PT1M",
+    "connect.ftp.file.maxage": "P1D",
+    "connect.ftp.keystyle": "struct",
+    "connect.ftp.monitor.update": "/home/arthur/ftpdata/:bshm"
+  }
+}

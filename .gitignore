@@ -1,3 +1,4 @@
 storm/logs/*
 ftp/data/*
+confluent/connectors/*.jar
 !README.md
