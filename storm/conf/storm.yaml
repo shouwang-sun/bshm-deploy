@@ -1,7 +1,9 @@
 storm.log.dir: "/logs"
 storm.local.dir: "/data"
+
 storm.zookeeper.servers:
-    - "zookeeper"
+    - "storm_zookeeper"
+storm.zookeeper.port: 2888
 
 nimbus.seeds: [nimbus]
 

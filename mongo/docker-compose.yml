@@ -7,6 +7,8 @@ services:
             - data:/data/db
         networks:
             - bshm_net
+        ports:
+            - "27017:27017"
         restart: always
 
 networks:

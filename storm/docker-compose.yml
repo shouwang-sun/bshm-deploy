@@ -1,17 +1,21 @@
 version: '3.4'
 services:
 
-    zookeeper:
+    storm_zookeeper:
         image: zookeeper:${ZOOKEEPER_VERSION:-3.4.11}
+        environment:
+            ZOO_PORT: 2888
         networks:
             - bshm_net
+        volumes:
+            - zoo_data:/data
         restart: always
 
     nimbus:
         image: storm:${STORM_VERSION:-1.1.1}
         command: storm nimbus
         depends_on:
-            - zookeeper
+            - storm_zookeeper
         networks:
             - bshm_net
         ports:
@@ -27,7 +31,7 @@ services:
         command: storm supervisor
         depends_on:
             - nimbus
-            - zookeeper
+            - storm_zookeeper
         networks:
             - bshm_net
         volumes:
@@ -40,7 +44,7 @@ services:
         image: storm:${STORM_VERSION:-1.1.1}
         command: storm ui
         depends_on:
-            - zookeeper
+            - storm_zookeeper
             - nimbus
         networks:
             - bshm_net
@@ -54,8 +58,8 @@ services:
 
 volumes:
     data:
+    zoo_data:
 
 networks:
     bshm_net:
         external: true
-    
