@@ -1,10 +1,10 @@
 
-* start the storm cluster
+* start the mongodb server
 ```
 docker-compose up -d
 ```
 
-* stop the storm cluster
+* stop the mongodb server
 ```
 docker-compose down
 ```

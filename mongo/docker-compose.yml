@@ -1,14 +1,14 @@
 version: '3.4'
-services:
 
-    mongodb:
+services:
+    server:
         image: mongo:${MONGO_VERSION:-3.4.10}
-        volumes:
-            - data:/data/db
         networks:
             - bshm_net
         ports:
             - "27017:27017"
+        volumes:
+            - data:/data/db
         restart: always
 
 networks:
