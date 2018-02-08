@@ -1,8 +1,16 @@
-# bshm-deploy
+# BSHM deployment document
 
-The deploy project for bshm.
+## How to install docker and docker-compose
+Refer to [DaoCloud](http://get.daocloud.io/) for more info.
 
-step 1: create docker networks for bshm.
+## How to start or stop services
+We use docker-compose to manage our services.
+* To start the services:
 ```
-docker network create bshm_net
+docker-compose up -d
 ```
+* To stop the services:
+```
+docker-compose down
+```
+For more info, see **docker-compose --help**.
