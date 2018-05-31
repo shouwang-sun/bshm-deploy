@@ -1,14 +1,14 @@
 {
-  "name": "FtpSourceConnector",
+  "name": "FtpSourceBaofu",
   "config": {
     "connector.class": "com.datamountaineer.streamreactor.connect.ftp.FtpSourceConnector",
     "tasks.max": "1",
     "connect.ftp.address": "192.168.16.202:21",
     "connect.ftp.user": "arthur",
     "connect.ftp.password": "Alin@iHome301",
-    "connect.ftp.refresh": "PT1M",
+    "connect.ftp.refresh": "PT30S",
     "connect.ftp.file.maxage": "PT5M",
     "connect.ftp.keystyle": "struct",
-    "connect.ftp.monitor.update": "/test/:test"
+    "connect.ftp.monitor.update": "/baofu/:baofu"
   }
 }
